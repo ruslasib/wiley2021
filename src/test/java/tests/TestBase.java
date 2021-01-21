@@ -6,7 +6,10 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
+import tests.manager.ParametersHolder;
 import tests.manager.Wiley;
+
+import java.util.concurrent.TimeUnit;
 
 public class TestBase {
 
@@ -16,11 +19,12 @@ public class TestBase {
     @BeforeClass
     public void setUp() {
         driver = new ChromeDriver();
+        driver.manage().timeouts().implicitlyWait(ParametersHolder.IMPLICIT_WAIT, TimeUnit.SECONDS);
         driver.manage().window().maximize();
         driver.get("https://www.wiley.com/en-us");
         wiley = new Wiley(driver);
         wiley.start();
-        wiley.undetectedLocationModalWindow().close();
+        wiley.undetectedLocationModalWindow().yes();
     }
 
     @AfterClass

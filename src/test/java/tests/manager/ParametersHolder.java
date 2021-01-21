@@ -2,5 +2,5 @@ package tests.manager;
 
 public class ParametersHolder {
 
-  public static long IMPLICIT_WAIT = 10;
+  public static long IMPLICIT_WAIT = 2;
 }

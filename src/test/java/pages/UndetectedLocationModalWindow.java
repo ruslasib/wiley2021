@@ -1,6 +1,5 @@
 package pages;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -19,9 +18,18 @@ public class UndetectedLocationModalWindow extends Page {
   @FindBy(className = "close")
   private WebElement closeBtn;
 
+  @FindBy(className = "changeLocationConfirmBtn")
+  private WebElement yesBtn;
+
   public void close() {
-    if(isElementPresent(modalDialog)) {
-      click(closeBtn);
-    }
+    if(exists()) click(closeBtn);
+  }
+
+  public void yes() {
+    if(exists()) click(yesBtn);
+  }
+
+  public boolean exists() {
+    return isElementPresent(modalDialog);
   }
 }

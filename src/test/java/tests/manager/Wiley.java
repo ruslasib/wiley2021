@@ -1,10 +1,9 @@
 package tests.manager;
 
 import org.openqa.selenium.WebDriver;
-import pages.HomePage;
-import pages.SearchPanel;
-import pages.UndetectedLocationModalWindow;
-import pages.WhoWeServeSubMenu;
+import pages.*;
+import pages.search.SearchPanel;
+import pages.search.SearchResultPage;
 
 public class Wiley {
 
@@ -13,6 +12,7 @@ public class Wiley {
     private UndetectedLocationModalWindow undetectedLocationModalWindow;
     private WhoWeServeSubMenu whoWeServeSubMenu;
     private SearchPanel searchPanel;
+    private SearchResultPage searchResultPage;
 
     public Wiley(WebDriver driver) {
         this.driver = driver;
@@ -23,6 +23,7 @@ public class Wiley {
         undetectedLocationModalWindow = new UndetectedLocationModalWindow(driver);
         whoWeServeSubMenu = new WhoWeServeSubMenu(driver);
         searchPanel = new SearchPanel(driver);
+        searchResultPage = new SearchResultPage(driver);
     }
 
     public UndetectedLocationModalWindow undetectedLocationModalWindow() {
@@ -39,5 +40,9 @@ public class Wiley {
 
     public SearchPanel searchPanel() {
         return searchPanel;
+    }
+
+    public SearchResultPage searchResultPage() {
+        return searchResultPage;
     }
 }
