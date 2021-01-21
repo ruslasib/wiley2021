@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.InvalidSelectorException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.PageFactory;
 import tests.manager.ParametersHolder;
 
 import java.util.List;
@@ -16,6 +17,7 @@ public class Page {
 
   public Page(WebDriver driver) {
     this.driver = driver;
+    PageFactory.initElements(driver, this);
   }
 
   public void click(WebElement element) {

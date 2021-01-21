@@ -6,6 +6,7 @@ public class WhoWeServeTests extends TestBase {
 
   @Test
   public void testWhoWeServe() {
-
+    wiley.homePage().clickWhoWeServe();
+    System.out.println();
   }
 }

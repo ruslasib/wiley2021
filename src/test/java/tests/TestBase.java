@@ -9,7 +9,7 @@ import tests.manager.Wiley;
 public class TestBase {
 
     private WebDriver driver;
-    private Wiley wiley;
+    protected Wiley wiley;
 
     @BeforeClass
     public void setUp() {
