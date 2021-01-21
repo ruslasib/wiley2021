@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.concurrent.TimeUnit;
 
-public class Page {
+public abstract class Page {
 
   private WebDriver driver;
 
@@ -22,12 +22,6 @@ public class Page {
 
   public void click(WebElement element) {
     element.click();
-  }
-
-  public void type(By locator, String input) {
-    WebElement element = driver.findElement(locator);
-    element.clear();
-    element.sendKeys(input);
   }
 
   public boolean isElementPresent(List<WebElement> elements) {

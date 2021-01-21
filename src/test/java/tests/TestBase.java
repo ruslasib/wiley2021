@@ -1,6 +1,8 @@
 package tests;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
@@ -25,5 +27,16 @@ public class TestBase {
     public void tearDown() {
         driver.quit();
         driver = null;
+    }
+
+    public void typeIn(By locator, String input) {
+        WebElement element = driver.findElement(locator);
+        element.clear();
+        element.sendKeys(input);
+    }
+
+    public void typeIn(WebElement element, String input) {
+        element.clear();
+        element.sendKeys(input);
     }
 }
