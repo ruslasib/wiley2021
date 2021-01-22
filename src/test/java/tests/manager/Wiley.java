@@ -1,7 +1,7 @@
 package tests.manager;
 
 import org.openqa.selenium.WebDriver;
-import pages.EducationPage;
+import pages.educationpage.EducationPage;
 import pages.UndetectedLocationModalWindow;
 import pages.WhoWeServeSubMenu;
 import pages.homepage.HomePage;
