@@ -1,11 +1,13 @@
 package pages.search;
 
+import models.ProductItem;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import pages.Page;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
@@ -56,29 +58,49 @@ public class SearchResultPage extends Page {
 
   public boolean isEbookTabExistsIn(WebElement product) {
     driver.manage().timeouts().implicitlyWait(0, TimeUnit.SECONDS);
-    if (product.findElements(By.xpath(".//a/*[contains(text(),'E-Book')]")).size() > 0) {
+    List<WebElement> eBookTab = product.findElements(By.xpath(".//a/*[contains(text(),'E-Book')]"));
+    if (isElementPresent(eBookTab)) {
       return true;
     } else return false;
   }
 
   public boolean isPrintTabExistsIn(WebElement product) {
     driver.manage().timeouts().implicitlyWait(0, TimeUnit.SECONDS);
-    if (product.findElements(By.xpath(".//a/*[contains(text(),'Print')]")).size() > 0) {
+    List<WebElement> printTab = product.findElements(By.xpath(".//a/*[contains(text(),'Print')]"));
+    if (isElementPresent(printTab)) {
       return true;
     } else return false;
   }
 
   public boolean isObookTabExistsIn(WebElement product) {
     driver.manage().timeouts().implicitlyWait(0, TimeUnit.SECONDS);
-    if (product.findElements(By.xpath(".//a/*[contains(text(),'O-Book')]")).size() > 0) {
+    List<WebElement> oBookTab = product.findElements(By.xpath(".//a/*[contains(text(),'O-Book')]"));
+    if (isElementPresent(oBookTab)) {
       return true;
     } else return false;
   }
 
   public boolean isPrintBookAvailableIn(WebElement product) {
     driver.manage().timeouts().implicitlyWait(0, TimeUnit.SECONDS);
-    if (product.findElements(By.cssSelector(".add-to-cart-button")).size() > 0) {
+    List<WebElement> addToCart = product.findElements(By.cssSelector(".add-to-cart-button"));
+    if (isElementPresent(addToCart)) {
       return true;
     } else return false;
+  }
+
+  public List<ProductItem> getProductItems() {
+    List<ProductItem> productItems = new ArrayList<>();
+    List<WebElement> products = allProducts();
+    for (WebElement product : products) {
+      ProductItem item = new ProductItem()
+              .withTitle(productTitleOf(product))
+              .withSearchHighlightText(searchHighlightTextOf(product))
+              .withEbookTab(isEbookTabExistsIn(product))
+              .withPrintTab(isPrintTabExistsIn(product))
+              .withObookTab(isObookTabExistsIn(product));
+      productItems.add(item);
+      System.out.println(item.toString());
+    }
+    return productItems;
   }
 }
