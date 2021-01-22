@@ -12,7 +12,14 @@ public class HomePage extends Page {
   @FindBy(css = ".navigation-menu-items > li:nth-child(1)")
   public WebElement whoWeServe;
 
+  @FindBy(id = "wileyLogo")
+  public WebElement logo;
+
   public void clickWhoWeServe() {
     click(whoWeServe);
+  }
+
+  public void goToHomePage() {
+    click(logo);
   }
 }
