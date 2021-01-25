@@ -5,7 +5,6 @@ import io.restassured.response.ResponseBody;
 import io.restassured.specification.RequestSpecification;
 import org.testng.annotations.Test;
 
-import java.beans.Encoder;
 import java.nio.charset.StandardCharsets;
 import java.util.Base64;
 

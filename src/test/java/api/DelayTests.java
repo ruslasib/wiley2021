@@ -114,7 +114,6 @@ public class DelayTests {
   public void testDelayIsEmpty() {
     testData = "";
     response = request.post("/delay");
-        System.out.println(given().post("/delay/").prettyPrint());
     expect().
             statusCode(404).
             when().
