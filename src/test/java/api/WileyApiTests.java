@@ -17,16 +17,16 @@ import static org.hamcrest.MatcherAssert.assertThat;
  */
 public class WileyApiTests {
 
+  private Response response;
   private String url = "https://www.wiley.com/en-us/search/autocomplete/comp_00001H9J?term=Java";
 
-  @Before
+  @BeforeClass
   public void precondition() {
-    url = "https://www.wiley.com/en-us/search/autocomplete/comp_00001H9J?term=Java";
+     response = get(url);
   }
 
   @Test
   public void testSuggestionsInGetRs() {
-    Response response = get(url);
     List<String> terms = response.jsonPath().getList("suggestions.term");
     assertThat(terms.size(), equalTo(4));
     assertThat(terms, everyItem(startsWith("<span class=\"search-highlight\">java</span>")));
@@ -34,7 +34,6 @@ public class WileyApiTests {
 
   @Test
   public void testTitleAttributeInGetRs() {
-    Response response = get(url);
     List<String> titles = response.jsonPath().getList("pages.title");
     assertThat(titles.size(), equalTo(4));
     assertThat(titles, everyItem(containsString("Wiley")));
