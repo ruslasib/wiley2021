@@ -1,10 +1,10 @@
-package pages.homepage;
+package ui.pages.homepage;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
-import pages.Page;
+import ui.pages.Page;
 
 public class SubjectsSubmenu extends Page {
 

@@ -1,4 +1,4 @@
-package tests;
+package ui.tests;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -8,8 +8,8 @@ import org.openqa.selenium.support.events.AbstractWebDriverEventListener;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
-import tests.manager.ParametersHolder;
-import tests.manager.Wiley;
+import ui.tests.manager.ParametersHolder;
+import ui.tests.manager.Wiley;
 
 import java.util.concurrent.TimeUnit;
 

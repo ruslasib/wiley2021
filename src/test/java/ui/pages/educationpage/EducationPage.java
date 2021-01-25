@@ -1,9 +1,9 @@
-package pages.educationpage;
+package ui.pages.educationpage;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import pages.Page;
+import ui.pages.Page;
 
 public class EducationPage extends Page {
 

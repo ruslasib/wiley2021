@@ -1,11 +1,11 @@
-package pages;
+package ui.pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.InvalidSelectorException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
-import tests.manager.ParametersHolder;
+import ui.tests.manager.ParametersHolder;
 
 import java.util.List;
 import java.util.NoSuchElementException;

@@ -1,4 +1,4 @@
-package tests.manager;
+package ui.tests.manager;
 
 public class ParametersHolder {
 

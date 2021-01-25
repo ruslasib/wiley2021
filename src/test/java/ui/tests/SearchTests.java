@@ -1,6 +1,6 @@
-package tests;
+package ui.tests;
 
-import models.ProductItem;
+import ui.models.ProductItem;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
 

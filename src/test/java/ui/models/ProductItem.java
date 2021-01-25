@@ -1,4 +1,4 @@
-package models;
+package ui.models;
 
 public class ProductItem {
 

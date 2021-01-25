@@ -1,12 +1,12 @@
-package tests.manager;
+package ui.tests.manager;
 
 import org.openqa.selenium.WebDriver;
-import pages.educationpage.EducationPage;
-import pages.UndetectedLocationModalWindow;
-import pages.WhoWeServeSubMenu;
-import pages.homepage.HomePage;
-import pages.search.SearchPanel;
-import pages.search.SearchResultPage;
+import ui.pages.educationpage.EducationPage;
+import ui.pages.UndetectedLocationModalWindow;
+import ui.pages.WhoWeServeSubMenu;
+import ui.pages.homepage.HomePage;
+import ui.pages.search.SearchPanel;
+import ui.pages.search.SearchResultPage;
 
 public class Wiley {
 

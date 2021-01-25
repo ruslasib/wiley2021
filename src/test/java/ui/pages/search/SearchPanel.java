@@ -1,9 +1,9 @@
-package pages.search;
+package ui.pages.search;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import pages.Page;
+import ui.pages.Page;
 
 import java.util.ArrayList;
 import java.util.List;

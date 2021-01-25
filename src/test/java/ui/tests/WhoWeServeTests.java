@@ -1,4 +1,4 @@
-package tests;
+package ui.tests;
 
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;

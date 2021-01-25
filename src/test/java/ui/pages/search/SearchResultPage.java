@@ -1,11 +1,11 @@
-package pages.search;
+package ui.pages.search;
 
-import models.ProductItem;
+import ui.models.ProductItem;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import pages.Page;
+import ui.pages.Page;
 
 import java.util.ArrayList;
 import java.util.List;
