@@ -141,6 +141,16 @@ public class DelayTests {
   }
 
   @Test
+  public void testDelayIsSymbol() {
+    testData = "#";
+    response = request.post("/delay");
+    expect().
+            statusCode(500).
+            when().
+            post("/delay/" + testData);
+  }
+
+  @Test
   public void testDelayIsSQLIngection() {
     testData = "1'--'";
     response = request.post("/delay");

@@ -34,7 +34,7 @@ public class SearchResultPage extends Page {
   By productNotAvailableForPurchaseLocator = By.className("pr-not-available");
 
   @FindBy(className = "product-item")
-  public List<WebElement> allProducts;
+  private List<WebElement> allProducts;
 
   public List<WebElement> allProducts() {
     return allProducts;
