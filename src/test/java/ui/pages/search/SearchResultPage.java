@@ -97,7 +97,6 @@ public class SearchResultPage extends Page {
 
   public void checkAddToCartBtnForEbookOf(WebElement product) {
     ProductItem productItem = getSingleProductItemOf(product);
-    System.out.println("Checking E-Book...\n" + productItem.toString());
     if(productItem.isEbookTabExists()) {
       WebElement eBookTab = product.findElement(eBookTabLocator);
       click(eBookTab);
@@ -109,7 +108,6 @@ public class SearchResultPage extends Page {
   public void checkAddToCartBtnForPrintbookOf(WebElement product) {
     ProductItem productItem = getSingleProductItemOf(product);
     boolean exists = false;
-    System.out.println("Checking Printbook...\n" + productItem.toString());
     if(productItem.isPrintTabExists()) {
       WebElement printBookTab = product.findElement(printBookTabLocator);
       click(printBookTab);
@@ -124,7 +122,6 @@ public class SearchResultPage extends Page {
 
   public void checkViewOnWileyOnlineLibraryBtnForObookOf(WebElement product) {
     ProductItem productItem = getSingleProductItemOf(product);
-    System.out.println("Checking O-Book...\n" + productItem.toString());
     if(productItem.isObookTabExists()) {
       WebElement oBookTab = product.findElement(oBookTabLocator);
       click(oBookTab);
