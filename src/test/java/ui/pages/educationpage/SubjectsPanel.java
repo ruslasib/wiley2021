@@ -15,7 +15,7 @@ public class SubjectsPanel extends Page {
   }
 
   @FindBy(css = ".side-panel li")
-  public List<WebElement> items;
+  private List<WebElement> items;
 
   public List<String> items() {
     List<String> itemsNames = new ArrayList<>();

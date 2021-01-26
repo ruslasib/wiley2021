@@ -15,7 +15,7 @@ public class EducationPage extends Page {
   }
 
   @FindBy(css = ".wiley-slogan h1:nth-of-type(3)")
-  public WebElement header;
+  private WebElement header;
 
   public String headerText() {
     return header.getAttribute("textContent").trim();

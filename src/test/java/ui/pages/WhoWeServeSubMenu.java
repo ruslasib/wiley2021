@@ -13,7 +13,7 @@ public class WhoWeServeSubMenu extends Page {
   }
 
   @FindBy(css = "#Level1NavNode1 > ul > li > a")
-  public List<WebElement> whoWeServeItems;
+  private List<WebElement> whoWeServeItems;
 
   public int itemsQuantity() {
     return whoWeServeItems.size();

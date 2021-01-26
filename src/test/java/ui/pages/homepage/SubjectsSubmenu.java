@@ -16,10 +16,10 @@ public class SubjectsSubmenu extends Page {
   }
 
   @FindBy(css = ".dropdown-submenu [href*=subjects]")
-  public WebElement subjectsHeader;
+  private WebElement subjectsHeader;
 
   @FindBy(css = "#Level1NavNode2 > ul > li > [href*=Education]")
-  public WebElement education;
+  private WebElement education;
 
   public void expand() {
     Actions actions = new Actions(driver);
