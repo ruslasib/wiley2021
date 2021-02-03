@@ -1,0 +1,9 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+
+<suite name="Education" verbose="1" >
+    <test name="EducationPageTests" >
+        <classes>
+            <class name="ui.tests.EducationPageTests" />
+        </classes>
+    </test>
+</suite>
