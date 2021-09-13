@@ -32,7 +32,7 @@ public class DelayTests {
             statusCode(200).
             and().
             body("headers.Content-Type", equalTo("application/x-www-form-urlencoded; charset=ISO-8859-1")).
-            body("origin", equalTo("90.154.70.25")).
+            body("origin", equalTo("90.154.70.114")).
             body("url", equalTo("https://httpbin.org/delay/" + testData)).
             and().
             header("content-type", "application/json").
@@ -47,7 +47,7 @@ public class DelayTests {
     expect().
             statusCode(200).
             and().
-            body("origin", equalTo("90.154.70.25")).
+            body("origin", equalTo("90.154.70.114")).
             body("url", equalTo("https://httpbin.org/delay/" + testData)).
             and().
             when().
@@ -61,7 +61,7 @@ public class DelayTests {
     expect().
             statusCode(200).
             and().
-            body("origin", equalTo("90.154.70.25")).
+            body("origin", equalTo("90.154.70.114")).
             body("url", equalTo("https://httpbin.org/delay/" + testData)).
             and().
             when().
@@ -75,7 +75,7 @@ public class DelayTests {
     expect().
             statusCode(200).
             and().
-            body("origin", equalTo("90.154.70.25")).
+            body("origin", equalTo("90.154.70.114")).
             body("url", equalTo("https://httpbin.org/delay/" + testData)).
             and().
             when().
@@ -89,7 +89,7 @@ public class DelayTests {
     expect().
             statusCode(200).
             and().
-            body("origin", equalTo("90.154.70.25")).
+            body("origin", equalTo("90.154.70.114")).
             body("url", equalTo("https://httpbin.org/delay/" + testData)).
             and().
             when().
@@ -103,7 +103,7 @@ public class DelayTests {
     expect().
             statusCode(200).
             and().
-            body("origin", equalTo("90.154.70.25")).
+            body("origin", equalTo("90.154.70.114")).
             body("url", equalTo("https://httpbin.org/delay/" + testData)).
             and().
             when().
