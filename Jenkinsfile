@@ -1,27 +1,27 @@
-#!/usr/bin/env groovy
-
 pipeline {
     agent any
-
+    tools {
+        maven 'Maven 3.3.9'
+        jdk 'jdk8'
+    }
     stages {
-        stage('Build') {
+        stage ('Initialize') {
             steps {
-                maven 'build'
-                archiveArtifacts artifacts: '**/target/*.jar', fingerprint: true
+                sh '''
+                    echo "PATH = ${PATH}"
+                    echo "M2_HOME = ${M2_HOME}"
+                '''
             }
         }
-        stage('Test') {
+
+        stage ('Build') {
             steps {
-                /* `make check` returns non-zero on test failures,
-                * using `true` to allow the Pipeline to continue nonetheless
-                */
-                sh 'make check || true'
-                junit '**/target/*.xml'
+                sh 'mvn -Dmaven.test.failure.ignore=true install'
             }
-        }
-        stage('Deploy') {
-            steps {
-                echo 'Deploying....'
+            post {
+                success {
+                    junit 'target/surefire-reports/**/*.xml'
+                }
             }
         }
     }
